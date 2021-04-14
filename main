@@ -1,0 +1,235 @@
+package com.company;
+import java.util.Scanner;
+class brain{
+    void addition()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("GOING TO ADD TWO MATRICES");
+        System.out.println("Enter the number of rows for the first matrix:");
+        int row1= sc.nextInt();
+        System.out.println("Enter the number of columns for the first matrix:");
+        int column1= sc.nextInt();
+        int[][] matrix1= new int[row1][column1];
+        System.out.println("Enter the first matrix:");
+        for(int i=0;i<row1;i++)
+        {
+            for(int j=0;j<column1;j++)
+            {
+                matrix1[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Enter the number of rows for the second matrix: ");
+        int row2=sc.nextInt();
+        System.out.println("Enter the number of column for the second matrix: ");
+        int column2= sc.nextInt();
+        int[][] matrix2= new int[row2][column2];
+        System.out.println("Enter the second matrix: ");
+        for(int i=0;i<row2;i++)
+        {
+            for(int j=0;j<column2;j++)
+            {
+                matrix2[i][j]=sc.nextInt();
+            }
+        }
+        int[][] matrix3= new int[row1][column1];
+        if (row1==row2 && column1==column2)
+        {
+            for (int i=0;i<row1;i++)
+            {
+                for (int j=0;j<column1;j++)
+                {
+                    matrix3[i][j]=matrix1[i][j]+matrix2[i][j];
+                }
+            }
+            System.out.println("The sum of the two matrices is: ");
+            for(int i=0;i<row1;i++)
+            {
+                for(int j=0;j<column1;j++)
+                {
+                    System.out.print("   "+matrix3[i][j]);
+                }
+                System.out.println();
+            }
+        }
+        else
+        {
+            System.out.println("To add two matrices, ");
+            System.out.println("The number of rows in matrix1=the number of rows in matrix2");
+            System.out.println("As well as, the number of columns in matrix1=the number of columns in matrix2");
+        }
+    }
+    void subtraction()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("GOING TO SUBTRACT ONE MATRIX FROM ANOTHER MATRIX");
+        System.out.println("Enter the number of rows for the first matrix:");
+        int row1= sc.nextInt();
+        System.out.println("Enter the number of columns for the first matrix:");
+        int column1= sc.nextInt();
+        int[][] matrix1= new int[row1][column1];
+        System.out.println("Enter the first matrix:");
+        for(int i=0;i<row1;i++)
+        {
+            for(int j=0;j<column1;j++)
+            {
+                matrix1[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Enter the number of rows for the second matrix: ");
+        int row2=sc.nextInt();
+        System.out.println("Enter the number of column for the second matrix: ");
+        int column2= sc.nextInt();
+        int[][] matrix2= new int[row2][column2];
+        System.out.println("Enter the second matrix: ");
+        for(int i=0;i<row2;i++)
+        {
+            for(int j=0;j<column2;j++)
+            {
+                matrix2[i][j]=sc.nextInt();
+            }
+        }
+        int[][] matrix3= new int[row1][column1];
+        if (row1==row2 && column1==column2)
+        {
+            for (int i=0;i<row1;i++)
+            {
+                for (int j=0;j<column1;j++)
+                {
+                    matrix3[i][j]=matrix1[i][j]-matrix2[i][j];
+                }
+            }
+            System.out.println("The difference of the two matrices is: ");
+            for(int i=0;i<row1;i++)
+            {
+                for(int j=0;j<column1;j++)
+                {
+                    System.out.print("   "+matrix3[i][j]);
+                }
+                System.out.println();
+            }
+        }
+        else
+        {
+            System.out.println("To subtract two matrices, ");
+            System.out.println("The number of rows in matrix1=the number of rows in matrix2");
+            System.out.println("As well as, the number of columns in matrix1=the number of columns in matrix2");
+        }
+
+    }
+    void multiplication()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("GOING TO MULTIPLY TWO MATRICES");
+        System.out.println("Enter the number of rows for the first matrix");
+        int row1= sc.nextInt();
+        System.out.println("Enter the number of columns for the first matrix");
+        int column1= sc.nextInt();
+        int[][] matrix1= new int[row1][column1];
+        System.out.println("Enter the first matrix:");
+        for(int i=0;i<row1;i++)
+        {
+            for(int j=0;j<column1;j++)
+            {
+                matrix1[i][j]= sc.nextInt();
+            }
+        }
+        System.out.println("Enter the number of rows for the second matrix");
+        int row2= sc.nextInt();
+        System.out.println("Enter the number of columns for the second matrix");
+        int column2= sc.nextInt();
+        int[][] matrix2= new int[row2][column2];
+        System.out.println("Enter the second matrix: ");
+        for(int i=0;i<row2;i++)
+        {
+            for(int j=0;j<column2;j++)
+            {
+                matrix2[i][j]=sc.nextInt();
+            }
+        }
+        int[][] matrix3= new int[row1][column2];
+        if(column1==row2)
+        {
+            for(int i=0;i<row1;i++)
+            {
+                for(int j=0;j<column2;j++)
+                {
+                    matrix3[i][j]=0;
+                    for (int k=0;k<column1;k++)
+                    {
+                        matrix3[i][j]+=matrix1[i][k]*matrix2[k][j];
+                    }
+                }
+            }
+            System.out.println("The product of two matrices:");
+            for(int i=0;i<row1;i++)
+            {
+                for(int j=0;j<column2;j++)
+                {
+                    System.out.print("  "+matrix3[i][j]);
+                }
+                System.out.println();
+            }
+        }
+        else
+        {
+            System.out.println("To multiply two matrices, ");
+            System.out.println("The number of columns in matrix1 = The number of rows in matrix2");
+        }
+    }
+    void transpose()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("GOING TO FIND THE TRANSPOSE OF A MATRIX");
+        System.out.println("Enter the number of rows in the matrix:");
+        int row1= sc.nextInt();
+        System.out.println("Enter the number of column in the matrix:");
+        int column1= sc.nextInt();
+        int[][] matrix1= new int[row1][column1];
+        System.out.println("Enter the matrix:");
+        for (int i=0;i<row1;i++)
+        {
+            for(int j=0;j<column1;j++)
+            {
+                matrix1[i][j]= sc.nextInt();
+            }
+        }
+        int[][] matrix2= new int[column1][row1];
+        for(int i=0;i<column1;i++)
+        {
+            for(int j=0;j<row1;j++)
+            {
+                matrix2[i][j]=matrix1[j][i];
+            }
+        }
+        System.out.println("Transpose of the matrix is:");
+        for(int i=0;i<column1;i++) {
+            for (int j = 0; j < row1; j++)
+            {
+                System.out.print("  "+matrix2[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Matrix_Calculator{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        brain a= new brain();
+        System.out.println("THIS IS A MATRIX CALCULATOR");
+        System.out.println("To Add two matrices type 'Addition' or 'addition'");
+        System.out.println("To Subtract two matrices type 'Subtract' or 'subtract'");
+        System.out.println("To Multiply two matrices type 'Multiply' or 'multiply");
+        System.out.println("To find transpose of a matrix type 'Transpose' or 'transpose'");
+        System.out.println();
+        System.out.println();
+        System.out.println("Enter keyword to perform a function between two matrices");
+        String b= sc.nextLine();
+        switch (b) {
+            case "Addition", "addition" -> a.addition();
+            case "Subtract", "subtract" -> a.subtraction();
+            case "Multiply", "multiply" -> a.multiplication();
+            case "Transpose", "transpose" -> a.transpose();
+        }
+    }
+}
